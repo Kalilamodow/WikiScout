@@ -37,6 +37,7 @@ try {
 
     if (!$user) {
         http_response_code(401);
+        setcookie('auth', '', time() - 1000, "/", "", true, true);
         echo json_encode(['error' => 'Invalid or expired token']);
         exit;
     }
