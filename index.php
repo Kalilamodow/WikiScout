@@ -1,3 +1,11 @@
+<?php 
+$token = $_COOKIE["auth"] ?? null;
+if ($token != null) {
+  header("Location: /dashboard/");
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
